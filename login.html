@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="Formularioadministrador.css">
+        <title>
+            Formulario
+          </title>
+          <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <table>
+            
+            
+            
+            <tr><td><input type="text" id="emaillogin" placeholder="Email"></td></tr>
+            <tr><td><input type="password" id="clavelogin" placeholder="Clave"></td></tr>
+        
+            
+
+            </td></tr>
+            <tr><td><button onclick="loguear()">Enviarr</button></td></tr>
+            </table>
+
+            
+        
+        
+<script src="jquery.js"></script>
+ <script type="text/javascript" src="administradorfrontend.js"></script>
+
+ <script type="text/javascript">
+     
+     function loguear(){
+let admactual = new _Administrador('0',
+        "",
+              document.getElementById("clavelogin").value,
+              document.getElementById("emaillogin").value,
+              "",
+      ""
+        
+        );
+        admactual.Login().then(function(response) {
+  console.log("Success!", response);
+            alert("login con éxito");
+            alert('Bienvenido');
+            localStorage.getItem('usuariologueado',JSON.stringify(response));
+            location.href = 'index.html';
+          
+}, function(error) {
+  console.error("Failed!", error);
+             alert("Error " + error);
+               
+});
+
+     }
+ </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inicio - InKards</title>
+    </head>
+    <link rel="stylesheet" href="css/estilomenu.css">
+    <link rel="stylesheet" type="text/css" href="css/estilocartas.css">
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/TipoCarta.js"></script>
+    <script type="text/javascript" src="js/CrearCarta.js"></script>
+
+
+    <body class="fondo1">
+        <div id='menu' class="menudesplegable">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
+            <a href="index.html" class="letra">Inicio</a>
+            <a href="coleccion.html" class="letra">Ver cartas</a>
+            <a href="seleccionarcarta.html" class="letra">Agregar cartas</a>
+            <a href="coleccion.html" class="letra"><strong>Iniciar sesión</strong></a>
+            <a href="coleccion.html" class="letra"><strong>Registrar administrador</strong></a>
+        </div>
+        <div class="header">
+
+            <div id="botonmenu" align="center">
+                <button class="openbtn" onclick="abrirMenu()">&#9776;</button>
+                <a href="index.html" class="nombrejuego">InKards</a>
+            </div>      
+        </div>
+
+
+        <h1 class="letra" align="center">Crea tu propia carta</h1>
+		<div align="center" class="main">
+
+			<table>
+                <tr>
+                    <td><h2>Selecciona la calidad de la carta:</h2></td>
+                    <td>
+                        <select id="calidad">
+                            <option value="comun">Común</option>
+                            <option value="rara">Rara</option>
+                            <option value="epica">Épica</option>
+                            <option value="legendaria">Legendaria</option>
+                        </select>
+                    </td>
+                </tr>
+                </table>
+                <div class="espacio"></div>
+                <h2>Selecciona el tipo de carta</h2>
+                <table>
+                    <tr>
+                        <td><a href="agregarpersonaje.html" class="letra" onclick="crearCookieCarta()"><img src="img/CharizardX.png" width="150" height="150"></a></td>
+                        <td><img src="img/Arco.png" width="150" height="150"></td>
+                        <td><img src="img/Tilted.jpg" width="300" height="150"></td>    
+                    </tr>
+                    <tr>
+                        <td align="center"><h2><a href="agregarpersonaje.html" class="letra" onclick="crearCookieCarta()">Personaje</a><h2></td>
+                        <td align="center"><h2><a href="agregarobjeto.html" class="letra" onclick="crearCookieCarta()">Objeto</a><h2></td>
+                        <td align="center"><a></a>Escenario</td>
+                    </tr>
+                </table>
+            
+    </body>
+</html>
+

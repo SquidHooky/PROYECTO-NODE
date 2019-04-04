@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inicio - InKards</title>
+    </head>
+    <link rel="stylesheet" href="css/estilomenu.css">
+    <link rel="stylesheet" type="text/css" href="css/estilocartas.css">
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/TipoCarta.js"></script>
+    <script type="text/javascript" src="js/CrearCarta.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+    <body class="fondo1" onload="ValorCarta()">
+        <div id='menu' class="menudesplegable">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
+            <a href="index.html" class="letra">Inicio</a>
+            <a href="coleccion.html" class="letra">Ver cartas</a>
+            <a href="seleccionarcarta.html" class="letra">Agregar cartas</a>
+            <a href="coleccion.html" class="letra"><strong>Iniciar sesión</strong></a>
+            <a href="coleccion.html" class="letra"><strong>Registrar administrador</strong></a>
+        </div>
+        <div class="header">
+
+            <div id="botonmenu" align="center">
+                <button class="openbtn" onclick="abrirMenu()">&#9776;</button>
+                <a href="index.html" class="nombrejuego">InKards</a>
+            </div>      
+        </div>
+
+
+        <h1 class="letra" align="center">Crea tu propia carta</h1>
+		<div align="center" class="main">
+
+			
+
+			
+            
+			<div id="LaCalidad" class="cartacomun">
+
+            <div class="fotopersonaje" align="center">
+                
+                <input type="file" id="FotoCarta">
+
+
+            </div>    
+
+
+            
+           <div class="espacio"></div>
+                <div class="card">
+                    <input class="elemento" type="text" id="nombrecarta" placeholder="Nombre de la carta">
+                    <input class="elemento2" type="text" id="Habilidad1" placeholder="Efecto" >
+                    
+                </div>
+                </div>
+			<button onclick="botonguardarclick()" class="botoncentro">Enviar</button>
+			
+        </div>
+
+        <script type="text/javascript" src="objetofrontend.js"></script>
+<script type="text/javascript">
+
+            
+       
+             let imagenenbase64 = ""; //Aquín se convierte a código base 64.
+    
+    $("#FotoCarta").change(function(){
+       readURL(this);
+ });
+    
+        function readURL(input) {
+
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+
+                            imagenenbase64=e.target.result;
+
+                        
+                          
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+function botonguardarclick()
+            {
+                var personajeinstanciado = new _Objeto(0,
+                document.getElementById("nombrecarta").value,
+                document.getElementById("LaCalidad").value,
+                document.getElementById("Habilidad1").value,
+                imagenenbase64,
+                );
+                                                        
+                personajeinstanciado.Guardar().then(function(response) {
+  console.log("Success!", response);
+            alert("Guardado con exito");
+               
+}, function(error) {
+  console.error("Failed!", error);
+             alert("Error " + error);
+             
+});                                        
+                                                        
+            }
+</script>
+    </body>
+</html>
+
